@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.example.azkar.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,27 +18,16 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+//        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
+//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+//            insets
+//        }
 
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
 
-
-        binding.button2.setOnClickListener {
-            if (navController.currentDestination?.id != R.id.fragment_AZKAR) {
-                navController.navigate(R.id.fragment_AZKAR)
-            }
-        }
-
-        binding.button.setOnClickListener {
-            if (navController.currentDestination?.id != R.id.fragment_prayer) {
-                navController.navigate(R.id.fragment_prayer)
-            }
-        }
+        binding.bottomNavigation.setupWithNavController(navController)
     }
 }

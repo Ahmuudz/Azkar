@@ -7,22 +7,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class AzkarFragment : Fragment(R.layout.fragment_azkar_recycler_view) {
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: AzkarAdapter
 
-    private val azkar = mutableListOf(
-        "لا اله الا الله",
-        "سبحان الله",
-        "الحمد لله",
-        "الله اكبر",
-        "استغفر الله"
-    )
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: AzkarCategoryAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         recyclerView = view.findViewById(R.id.recyclerViewAzkar)
 
-        adapter = AzkarAdapter(azkar)
+        adapter = AzkarCategoryAdapter(azkarCategories)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
     }
