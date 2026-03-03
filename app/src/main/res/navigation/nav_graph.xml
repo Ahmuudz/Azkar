@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_prayer">
+
+    <fragment
+        android:id="@+id/fragment_AZKAR"
+        android:name="com.example.azkar.AzkarFragment"
+        android:label="AzkarFragment">
+        <action
+            android:id="@+id/action_fragment_AZKAR_to_fragment_prayer"
+            app:destination="@id/fragment_prayer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_prayer"
+        android:name="com.example.azkar.PrayerFragment"
+        android:label="PrayerFragment">
+        <action
+            android:id="@+id/action_fragment_prayer_to_fragment_AZKAR"
+            app:destination="@id/fragment_AZKAR" />
+    </fragment>
+
+</navigation>

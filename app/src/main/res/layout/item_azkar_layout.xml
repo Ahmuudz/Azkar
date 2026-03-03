@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:backgroundTint="#D4AF37"
+    android:clickable="true"
+    android:elevation="4dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:layoutDirection="rtl"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/azkar_text"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:textColor="#0D3B2F"
+            android:textSize="18sp"
+            tools:text="لا اله الا الله" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
