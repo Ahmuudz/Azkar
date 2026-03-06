@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    android:backgroundTint="#D4AF37"
+    app:cardCornerRadius="16dp"
+    android:elevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layoutDirection="rtl">
+
+        <TextView
+            android:id="@+id/azkar_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#0D3B2F"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="سبحان الله وبحمده" />
+
+        <TextView
+            android:id="@+id/azkar_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="12dp"
+            android:background="#0D3B2F"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
+            android:textColor="#D4AF37"
+            android:textSize="14sp"
+            android:text="التكرار: 100" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
