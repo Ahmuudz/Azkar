@@ -7,25 +7,29 @@
     <fragment
         android:id="@+id/home"
         android:name="com.example.azkar.HomeFragment"
-        android:label="HomeFragment"
-        />
+        android:label="HomeFragment" />
+
+    <fragment
+        android:id="@+id/prayer_fragment"
+        android:name="com.example.azkar.PrayerFragment"
+        android:label="PrayerFragment" />
 
     <fragment
         android:id="@+id/azkar_fragment"
         android:name="com.example.azkar.AzkarFragment"
         android:label="AzkarFragment">
         <action
-            android:id="@+id/action_fragment_AZKAR_to_fragment_prayer"
-            app:destination="@id/prayer_fragment" />
+            android:id="@+id/action_azkar_fragment_to_azkarDetailFragment"
+            app:destination="@id/azkarDetailFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/prayer_fragment"
-        android:name="com.example.azkar.PrayerFragment"
-        android:label="PrayerFragment">
-        <action
-            android:id="@+id/action_fragment_prayer_to_fragment_AZKAR"
-            app:destination="@id/azkar_fragment" />
+        android:id="@+id/azkarDetailFragment"
+        android:name="com.example.azkar.AzkarDetailFragment"
+        android:label="AzkarDetailFragment">
+        <argument
+            android:name="category_title"
+            app:argType="string" />
     </fragment>
 
 </navigation>

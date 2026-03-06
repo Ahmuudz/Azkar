@@ -1,5 +1,6 @@
 package com.example.azkar
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class AzkarCategoryAdapter(
-    private val categories: List<AzkarCategory>
+    private val categories: List<AzkarCategory>,
+    private val onItemClick: (AzkarCategory) -> Unit
 ) : RecyclerView.Adapter<AzkarCategoryAdapter.CategoryViewHolder>() {
 
     class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -26,6 +28,11 @@ class AzkarCategoryAdapter(
         val category = categories[position]
         holder.icon.setImageResource(category.iconRes)
         holder.title.text = category.title
+        
+        holder.itemView.setOnClickListener {
+            Log.d("AzkarCategoryAdapter", "Clicked on: ${category.title}")
+            onItemClick(category)
+        }
     }
 
     override fun getItemCount(): Int = categories.size

@@ -6,17 +6,19 @@
     android:layout_margin="8dp"
     android:backgroundTint="#D4AF37"
     android:clickable="true"
+    android:focusable="true"
     android:elevation="4dp"
     android:foreground="?attr/selectableItemBackground"
     android:layoutDirection="rtl"
-    app:cardCornerRadius="18dp"
-    android:padding="12dp">
+    app:cardCornerRadius="18dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:clickable="false"
+        android:focusable="false">
 
         <TextView
             android:id="@+id/category_title"
@@ -27,13 +29,19 @@
             android:textColor="#0D3B2F"
             android:textSize="18sp"
             android:paddingLeft="30dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:clickable="false"
+            android:focusable="false" />
+        
         <ImageView
             android:id="@+id/category_icon"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:contentDescription="Icon"
-            android:src="@drawable/sun" />
+            android:src="@drawable/sun"
+            android:clickable="false"
+            android:focusable="false" />
+            
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
