@@ -7,12 +7,17 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class PrayerAdapter(
-    private val prayerList: MutableList<String>
+    private var prayerList: MutableList<String>
 ) : RecyclerView.Adapter<PrayerAdapter.PrayerViewHolder>() {
 
-    inner class PrayerViewHolder(itemView: View) :
+    class PrayerViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
         val textView: TextView = itemView.findViewById(R.id.prayer_text)
+    }
+
+    fun updateData(newList: MutableList<String>) {
+        this.prayerList = newList
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PrayerViewHolder {
@@ -22,11 +27,8 @@ class PrayerAdapter(
     }
 
     override fun onBindViewHolder(holder: PrayerViewHolder, position: Int) {
-        val currentPrayer = prayerList[position]
-        holder.textView.text = currentPrayer
+        holder.textView.text = prayerList[position]
     }
 
-    override fun getItemCount(): Int {
-        return prayerList.size
-    }
+    override fun getItemCount(): Int = prayerList.size
 }
